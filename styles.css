@@ -7,6 +7,7 @@ body {
 
 #container {
   background-color: gray;
+  width: 864px;
 }
 
 #container > div {
@@ -16,5 +17,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: inline-flex;
   border: 2px red solid;
 }
