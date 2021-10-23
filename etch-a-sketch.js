@@ -4,19 +4,24 @@ function boxes() {
 
     const box = document.createElement("div");
     box.textContent = "box";
-
+    box.classList.add("new");
     container.appendChild(box);
   }
 }
 
 boxes();
 
-// const box1 = document.createElement("div");
-// box1.textContent = "box";
+// const trailStart = document.querySelector("div");
 
-// container.appendChild(box1);
+function trail() {
+  const box = document.querySelector("#container");
+  box.addEventListener("mouseenter", (box.style.backgroundColor = "blue"));
+}
+trail();
+// function trailStart() {
+//   document.getElementsByClassName("test").style["background-color: purple"];
+// }
 
-// const box2 = document.createElement("div");
-// box2.textContent = "box";
-
-// container.appendChild(box2);
+// document.getElementsByClassName("test").onmouseenter = function () {
+//   trailStart();
+// };
