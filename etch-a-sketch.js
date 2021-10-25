@@ -1,4 +1,4 @@
-function boxes() {
+function createBoxes() {
   for (let i = 0; i < 256; i++) {
     const container = document.querySelector("#container");
 
@@ -9,19 +9,20 @@ function boxes() {
   }
 }
 
-boxes();
+// createBoxes();
 
-// const trailStart = document.querySelector("div");
+//// Works ver 1.1 (anonymous arrow function)
+// const mainBox = document.querySelector("#container");
 
-function trail() {
-  const box = document.querySelector("#container");
-  box.addEventListener("mouseenter", (box.style.backgroundColor = "blue"));
-}
-trail();
-// function trailStart() {
-//   document.getElementsByClassName("test").style["background-color: purple"];
+// mainBox.addEventListener("mouseenter", () => {
+//   alert("It works!");
+// });
+
+//// Works ver 1.0 !! (named function)
+// const mainBox = document.querySelector("#container");
+
+// mainBox.addEventListener("mouseenter", runThis);
+
+// function runThis() {
+//   alert("It works");
 // }
-
-// document.getElementsByClassName("test").onmouseenter = function () {
-//   trailStart();
-// };
