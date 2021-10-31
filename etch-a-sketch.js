@@ -9,7 +9,29 @@ function createBoxes() {
   }
 }
 
-// createBoxes();
+createBoxes();
+
+const singleBox = document.querySelectorAll(".new");
+singleBox.forEach((sBox) => {
+  sBox.addEventListener("mouseenter", () => {
+    alert("Sugoi!");
+  });
+});
+
+singleBox.addEventListener("mouseenter", () => alert("Yeppidibity!"));
+
+//// Works ver 2.1 using “on_event_” property with named function
+// const mainBox = document.querySelector("#container");
+// mainBox.onmouseenter = alertFunction;
+
+// function alertFunction() {
+//   alert("It works!");
+// }
+
+//// Works ver. 2.0 using “on_event_” property
+// const mainBox = document.querySelector("#container");
+
+// mainBox.onmouseenter = () => alert("It Works!");
 
 //// Works ver 1.1 (anonymous arrow function)
 // const mainBox = document.querySelector("#container");
@@ -18,7 +40,7 @@ function createBoxes() {
 //   alert("It works!");
 // });
 
-//// Works ver 1.0 !! (named function)
+//// Works ver 1.0 (named function)
 // const mainBox = document.querySelector("#container");
 
 // mainBox.addEventListener("mouseenter", runThis);
