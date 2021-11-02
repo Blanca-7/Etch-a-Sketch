@@ -14,7 +14,7 @@ body {
   grid-template-rows: repeat(16, 50px);
 }
 
-#container > div {
+.new {
   background-color: lightpink;
   border: 2px red solid;
 }
