@@ -13,8 +13,8 @@ createBoxes();
 
 const singleBox = document.querySelectorAll(".new");
 singleBox.forEach((sBox) => {
-  sBox.addEventListener("mouseenter", () => {
-    alert("Sugoi!");
+  sBox.addEventListener("mouseenter", function (event) {
+    event.target.style.backgroundColor = "purple";
   });
 });
 
