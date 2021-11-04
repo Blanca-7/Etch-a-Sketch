@@ -24,7 +24,11 @@ body {
   background-color: purple;
 }
 
-#reset {
+.colorTrail2 {
+  background-color: blue;
+}
+
+#button {
   display: flex;
   align-items: center;
   justify-content: center;
