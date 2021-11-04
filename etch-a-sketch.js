@@ -16,7 +16,7 @@ singleBox.forEach((sBox) => {
   sBox.addEventListener("mouseenter", () => {
     //event.target.style.backgroundColor = "purple";
     // sBox.classList.remove("new");
-    sBox.classList.toggle("colorTrail");
+    sBox.classList.add("colorTrail");
   });
 });
 
