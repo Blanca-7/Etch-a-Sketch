@@ -28,9 +28,10 @@ body {
   background-color: blue;
 }
 
-#button {
+#buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 150px;
+  gap: 1em;
 }

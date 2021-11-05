@@ -14,12 +14,14 @@ createBoxes();
 
 // upon mouseenter changes each box to a static color
 const singleBox = document.querySelectorAll(".new");
+
 singleBox.forEach((sBox) => {
   sBox.addEventListener("mouseenter", () => {
     sBox.classList.add("colorTrail");
   });
 });
 
+// button for reseting
 const btn = document.querySelector("#btn");
 
 singleBox.forEach((sBox) => {
