@@ -12,6 +12,21 @@ function createBoxes() {
 
 createBoxes();
 
+// deletes set of boxes
+function deleteBoxes() {
+  const boxes = document.querySelectorAll(".new");
+  boxes.forEach((box) => {
+    box.remove();
+  });
+
+  // const box = document.querySelectorAll(".new");
+  // for (let i = 0; i < box.length; i++) {
+  //   box.remove();
+  // }
+}
+
+deleteBoxes();
+
 // upon mouseenter changes each box to a static color
 const singleBox = document.querySelectorAll(".new");
 
@@ -22,10 +37,27 @@ singleBox.forEach((sBox) => {
 });
 
 // button for reseting
-const btn = document.querySelector("#btn");
+const reset = document.querySelector("#reset-btn");
 
 singleBox.forEach((sBox) => {
-  btn.addEventListener("click", () => {
+  reset.addEventListener("click", () => {
     sBox.classList.remove("colorTrail");
   });
+});
+
+// button for prompt
+
+const user = document.querySelector("#prompt-btn");
+
+let userValue;
+
+user.addEventListener("click", () => {
+  let userValue = prompt(
+    "Please enter a number less than 100 to generate a new set of tiles"
+  );
+  if (userValue > 0 && userValue <= 100) {
+    createBoxes();
+  } else {
+    alert("Please Enter a number between 1 and 100");
+  }
 });
