@@ -12,7 +12,7 @@ function createBoxes(userValue) {
 
 createBoxes(prompt("Enter a number of boxes to create"));
 coloredBoxes();
-reset();
+enableReset();
 
 // deletes set of boxes
 function deleteBoxes() {
@@ -26,8 +26,6 @@ function deleteBoxes() {
 //   box.remove();
 // }
 
-// deleteBoxes();
-
 // upon mouseenter changes each box to a static color
 
 function coloredBoxes() {
@@ -40,7 +38,7 @@ function coloredBoxes() {
   });
 }
 // button for reseting/clear
-function reset() {
+function enableReset() {
   const singleBox = document.querySelectorAll(".new");
   const reset = document.querySelector("#reset-btn");
 
@@ -63,7 +61,7 @@ user.addEventListener("click", () => {
     deleteBoxes();
     createBoxes(userValue);
     coloredBoxes();
-    reset();
+    enableReset();
   } else {
     alert("Please Enter a number between 1 and 100");
   }
