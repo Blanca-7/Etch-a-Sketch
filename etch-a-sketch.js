@@ -12,6 +12,7 @@ function createBoxes(userValue) {
 
 createBoxes(prompt("Enter a number of boxes to create"));
 coloredBoxes();
+reset();
 
 // deletes set of boxes
 function deleteBoxes() {
@@ -39,14 +40,16 @@ function coloredBoxes() {
   });
 }
 // button for reseting/clear
-const singleBox = document.querySelectorAll(".new");
-const reset = document.querySelector("#reset-btn");
+function reset() {
+  const singleBox = document.querySelectorAll(".new");
+  const reset = document.querySelector("#reset-btn");
 
-singleBox.forEach((sBox) => {
-  reset.addEventListener("click", () => {
-    sBox.classList.remove("colorTrail");
+  singleBox.forEach((sBox) => {
+    reset.addEventListener("click", () => {
+      sBox.classList.remove("colorTrail");
+    });
   });
-});
+}
 
 // button for prompt
 
@@ -57,9 +60,10 @@ user.addEventListener("click", () => {
     "Please enter a number less than 100 to generate a new set of tiles"
   );
   if (userValue > 0 && userValue <= 100) {
-    deleteBoxes(); // bug persists, when creating a new set of tiles with prompt, unable to clear colors
+    deleteBoxes();
     createBoxes(userValue);
     coloredBoxes();
+    reset();
   } else {
     alert("Please Enter a number between 1 and 100");
   }
