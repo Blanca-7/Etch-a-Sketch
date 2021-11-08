@@ -26,18 +26,29 @@ function createUserBoxes(userValue) {
   }
 }
 
-// deletes set of boxes
+// deletes set of boxes using forEach
 function deleteBoxes() {
   const boxes = document.querySelectorAll(".new");
   boxes.forEach((box) => {
     box.remove();
   });
 }
-// const box = document.querySelectorAll(".new");
-// for (let i = 0; i < box.length; i++) {
-//   box.remove();
+
+// deletes set of boxes using for/of
+// function deleteBoxes() {
+//   const boxes = document.querySelectorAll(".new");
+//   for (let box of boxes) {
+//     box.remove();
+//   }
 // }
 
+// deletes set of boxes using for-loop
+// function deleteBoxes() {
+//   const boxes = document.querySelectorAll(".new");
+//   for (let i = 0; i < boxes.length; i++) {
+//     boxes[i].remove();
+//   }
+// }
 // upon mouseenter, changes each box to a static color
 
 function coloredBoxes() {
