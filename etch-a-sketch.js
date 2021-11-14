@@ -4,7 +4,7 @@ function createDefaultBoxes() {
     const container = document.querySelector("#container");
 
     const box = document.createElement("div");
-    box.textContent = "box";
+    //box.textContent = "box";
     box.classList.add("new");
     container.appendChild(box);
   }
@@ -20,7 +20,7 @@ function createUserBoxes(userValue) {
     const container = document.querySelector("#container");
 
     const box = document.createElement("div");
-    box.textContent = "box";
+    //box.textContent = "box";
     box.classList.add("new");
     container.appendChild(box);
   }
