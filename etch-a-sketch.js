@@ -16,7 +16,7 @@ resetButton();
 
 // creates custom set of tiles
 function createUserBoxes(userValue) {
-  for (let i = 0; i < userValue; i++) {
+  for (let i = 0; i < userValue * userValue; i++) {
     const container = document.querySelector("#container");
 
     const box = document.createElement("div");
