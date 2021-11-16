@@ -1,12 +1,17 @@
 // creates default set of tiles 16x16
 function createDefaultBoxes() {
-  for (let i = 0; i < 256; i++) {
+  for (let i = 0; i < 5; i++) {
     const container = document.querySelector("#container");
 
-    const box = document.createElement("div");
-    //box.textContent = "box";
-    box.classList.add("new");
-    container.appendChild(box);
+    const cells = document.createElement("div");
+    cells.classList.add("new");
+    container.appendChild(cells);
+    for (let j = 0; j < 5; j++) {
+      const box = document.createElement("div");
+      box.classList.add("actualBox");
+
+      cells.appendChild(box);
+    }
   }
 }
 
@@ -14,15 +19,14 @@ createDefaultBoxes();
 coloredBoxes();
 resetButton();
 
-// creates custom set of tiles
+// creates custom set of tiles flex-direction: row
 function createUserBoxes(userValue) {
-  for (let i = 0; i < userValue * userValue; i++) {
+  for (let i = 0; i < userValue; i++) {
     const container = document.querySelector("#container");
 
-    const box = document.createElement("div");
-    //box.textContent = "box";
-    box.classList.add("new");
-    container.appendChild(box);
+    const rows = document.createElement("div");
+    rows.classList.add("new");
+    container.appendChild(rows);
   }
 }
 
@@ -52,7 +56,7 @@ function deleteBoxes() {
 // upon mouseenter, changes each box to a static color
 
 function coloredBoxes() {
-  const singleBox = document.querySelectorAll(".new");
+  const singleBox = document.querySelectorAll(".actualBox");
 
   singleBox.forEach((sBox) => {
     sBox.addEventListener("mouseenter", () => {
@@ -63,7 +67,7 @@ function coloredBoxes() {
 // button for reseting/clear
 function resetButton() {
   const resetButton = document.querySelector("#reset-btn");
-  const singleBox = document.querySelectorAll(".new");
+  const singleBox = document.querySelectorAll(".actualBox");
 
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
@@ -82,7 +86,7 @@ function userPrompt() {
   let userValue = prompt(
     "Please enter a number less than 100 to generate a new set of tiles"
   );
-  if (userValue > 0 && userValue <= 100) {
+  if (userValue > 0 && userValue <= 225) {
     deleteBoxes();
     createUserBoxes(userValue);
     coloredBoxes();

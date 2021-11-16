@@ -1,6 +1,5 @@
 body {
   display: flex;
-
   align-items: center;
   min-height: 100vh;
   margin: 0;
@@ -10,24 +9,34 @@ body {
 
 #container {
   background-color: gray;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
-  width: 960px;
-  height: 1800px;
+  display: flex;
+  /* align-self: center; */
+  flex-wrap: wrap;
+  /* align-self: center; */
+  /* flex-direction: row; */
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(20px, 1fr)); */
+  width: 500px;
+  height: 500px;
+  border: solid rgb(51, 123, 218) 5px;
+  flex-direction: column;
 }
 
 .new {
   background-color: lightpink;
-  border: 2px red solid;
+  border: 1px red solid;
+  flex: 1 1 auto;
+  display: flex;
+}
+.actualBox {
+  gap: 2em;
+  flex: 1 1 auto;
+  border: 2px solid black;
 }
 
 .colorTrail {
   background-color: purple;
-}
-
-.colorTrail2 {
-  background-color: blue;
 }
 
 #buttons {
