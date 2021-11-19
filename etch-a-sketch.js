@@ -23,9 +23,15 @@ function createUserBoxes(userValue) {
   for (let i = 0; i < userValue; i++) {
     const container = document.querySelector("#container");
 
-    const rows = document.createElement("div");
-    rows.classList.add("new");
-    container.appendChild(rows);
+    const cells = document.createElement("div");
+    cells.classList.add("new");
+
+    for (let j = 0; j < userValue; j++) {
+      const box = document.createElement("div");
+      box.classList.add("actualBox");
+      cells.appendChild(box);
+    }
+    container.appendChild(cells);
   }
 }
 
