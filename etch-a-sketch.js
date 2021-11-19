@@ -5,13 +5,12 @@ function createDefaultBoxes() {
 
     const cells = document.createElement("div");
     cells.classList.add("new");
-    container.appendChild(cells);
     for (let j = 0; j < 5; j++) {
       const box = document.createElement("div");
       box.classList.add("actualBox");
-
       cells.appendChild(box);
     }
+    container.appendChild(cells);
   }
 }
 
@@ -32,7 +31,7 @@ function createUserBoxes(userValue) {
 
 // deletes set of boxes using forEach
 function deleteBoxes() {
-  const boxes = document.querySelectorAll(".new");
+  const boxes = document.querySelectorAll(".actualBox");
   boxes.forEach((box) => {
     box.remove();
   });
