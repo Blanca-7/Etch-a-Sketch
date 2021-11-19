@@ -1,11 +1,13 @@
+let defaultBoxes = 16;
+
 // creates default set of tiles 16x16
 function createDefaultBoxes() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < defaultBoxes; i++) {
     const container = document.querySelector("#container");
 
     const cells = document.createElement("div");
     cells.classList.add("new");
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < defaultBoxes; j++) {
       const box = document.createElement("div");
       box.classList.add("actualBox");
       cells.appendChild(box);
@@ -37,7 +39,7 @@ function createUserBoxes(userValue) {
 
 // deletes set of boxes using forEach
 function deleteBoxes() {
-  const boxes = document.querySelectorAll(".actualBox");
+  const boxes = document.querySelectorAll(".new");
   boxes.forEach((box) => {
     box.remove();
   });
@@ -91,7 +93,7 @@ function userPrompt() {
   let userValue = prompt(
     "Please enter a number less than 100 to generate a new set of tiles"
   );
-  if (userValue > 0 && userValue <= 225) {
+  if (userValue > 0 && userValue <= 100) {
     deleteBoxes();
     createUserBoxes(userValue);
     coloredBoxes();
