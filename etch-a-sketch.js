@@ -17,7 +17,8 @@ function createDefaultBoxes() {
 }
 
 createDefaultBoxes();
-coloredBoxes();
+// coloredBoxes();
+randomColor();
 resetButton();
 
 // creates custom set of tiles flex-direction: row
@@ -62,15 +63,29 @@ function deleteBoxes() {
 // }
 // upon mouseenter, changes each box to a static color
 
-function coloredBoxes() {
+// function coloredBoxes() {
+//   const singleBox = document.querySelectorAll(".actualBox");
+
+//   singleBox.forEach((sBox) => {
+//     sBox.addEventListener("mouseenter", () => {
+//       sBox.classList.add("colorTrail");
+//     });
+//   });
+// }
+
+function randomColor() {
+  let randomRgbValue = Math.floor(Math.random() * 16777215).toString(16);
+  let randomRgbColor = "#" + randomRgbValue;
+  console.log(randomRgbColor);
   const singleBox = document.querySelectorAll(".actualBox");
 
   singleBox.forEach((sBox) => {
     sBox.addEventListener("mouseenter", () => {
-      sBox.classList.add("colorTrail");
+      sBox.style.backgroundColor = randomRgbColor;
     });
   });
 }
+
 // button for reseting/clear
 function resetButton() {
   const resetButton = document.querySelector("#reset-btn");
@@ -102,3 +117,16 @@ function userPrompt() {
     alert("Please Enter a number between 1 and 100");
   }
 }
+
+// var letters = "0123456789ABCDEF";
+//   var color = "#";
+//   for (var i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   const singleBox = document.querySelectorAll(".actualBox");
+
+//   singleBox.forEach((sBox) => {
+//     sBox.addEventListener("mouseenter", () => {
+//       sBox.style.color = color;
+//     });
+//   });
