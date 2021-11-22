@@ -10,13 +10,7 @@ body {
 #container {
   background-color: gray;
   display: flex;
-  /* align-self: center; */
   flex-wrap: wrap;
-  /* align-self: center; */
-  /* flex-direction: row; */
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(20px, 1fr)); */
   width: 500px;
   height: 500px;
   border: 5px solid rgb(51, 123, 218);
@@ -32,11 +26,11 @@ body {
 .actualBox {
   gap: 2em;
   flex: 1 1 auto;
-  border: 2px solid rgb(121, 1, 1);
+  border: 2px solid rgb(13, 1, 121);
 }
 
 .colorTrail {
-  background-color: purple;
+  background-color: rgb(98, 35, 216);
 }
 
 #buttons {
