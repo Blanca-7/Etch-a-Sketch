@@ -18,7 +18,7 @@ function createDefaultBoxes() {
 
 createDefaultBoxes();
 coloredBoxes();
-randomColor();
+randomColorButton();
 resetButton();
 
 // creates custom set of tiles flex-direction: row
@@ -86,8 +86,8 @@ function randomColor() {
 }
 
 function randomColorButton() {
-  const randomButton = document.querySelector("#randomRGb");
-  randomButton.addEventListener("Click", randomColor);
+  const randomButton = document.querySelector("#randomRGB");
+  randomButton.addEventListener("click", randomColor);
 }
 
 // button for reseting/clear
@@ -98,7 +98,7 @@ function resetButton() {
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.classList.remove("colorTrail");
-      sBox.style.backgroundColor = "lightpink";
+      // sBox.style.backgroundColor = "lightpink";
     });
   });
 }
