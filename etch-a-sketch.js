@@ -17,7 +17,7 @@ function createDefaultBoxes() {
 }
 
 createDefaultBoxes();
-// coloredBoxes();
+coloredBoxes();
 randomColor();
 resetButton();
 
@@ -63,15 +63,15 @@ function deleteBoxes() {
 // }
 // upon mouseenter, changes each box to a static color
 
-// function coloredBoxes() {
-//   const singleBox = document.querySelectorAll(".actualBox");
+function coloredBoxes() {
+  const singleBox = document.querySelectorAll(".actualBox");
 
-//   singleBox.forEach((sBox) => {
-//     sBox.addEventListener("mouseenter", () => {
-//       sBox.classList.add("colorTrail");
-//     });
-//   });
-// }
+  singleBox.forEach((sBox) => {
+    sBox.addEventListener("mouseenter", () => {
+      sBox.classList.add("colorTrail");
+    });
+  });
+}
 
 function randomColor() {
   const singleBox = document.querySelectorAll(".actualBox");
