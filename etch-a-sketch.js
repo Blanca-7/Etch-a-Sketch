@@ -85,6 +85,11 @@ function randomColor() {
   });
 }
 
+function randomColorButton() {
+  const randomButton = document.querySelector("#randomRGb");
+  randomButton.addEventListener("Click", randomColor);
+}
+
 // button for reseting/clear
 function resetButton() {
   const resetButton = document.querySelector("#reset-btn");
