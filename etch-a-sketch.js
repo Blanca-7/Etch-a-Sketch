@@ -93,6 +93,7 @@ function resetButton() {
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.classList.remove("colorTrail");
+      sBox.style.backgroundColor = "lightpink";
     });
   });
 }
