@@ -127,7 +127,8 @@ function userPrompt() {
   if (userValue > 0 && userValue <= 100) {
     deleteBoxes();
     createUserBoxes(userValue);
-    coloredBoxes();
+    coloredBoxesButton();
+    randomColorButton();
     resetButton();
   } else {
     alert("Please Enter a number between 1 and 100");
