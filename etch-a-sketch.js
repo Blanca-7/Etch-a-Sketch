@@ -17,9 +17,10 @@ function createDefaultBoxes() {
 }
 
 createDefaultBoxes();
-coloredBoxes();
+coloredBoxesButton();
 randomColorButton();
 resetButton();
+resetButtonForRandomColor();
 
 // creates custom set of tiles flex-direction: row
 function createUserBoxes(userValue) {
@@ -68,9 +69,15 @@ function coloredBoxes() {
 
   singleBox.forEach((sBox) => {
     sBox.addEventListener("mouseenter", () => {
+      sBox.style.backgroundColor = ""; // removes RGB inline styling
       sBox.classList.add("colorTrail");
     });
   });
+}
+
+function coloredBoxesButton() {
+  const singleColorButton = document.querySelector("#fixed-Color");
+  singleColorButton.addEventListener("click", coloredBoxes);
 }
 
 function randomColor() {
@@ -86,7 +93,7 @@ function randomColor() {
 }
 
 function randomColorButton() {
-  const randomButton = document.querySelector("#randomRGB");
+  const randomButton = document.querySelector("#random-RGB");
   randomButton.addEventListener("click", randomColor);
 }
 
@@ -99,6 +106,17 @@ function resetButton() {
     resetButton.addEventListener("click", () => {
       sBox.classList.remove("colorTrail");
       // sBox.style.backgroundColor = "lightpink";
+    });
+  });
+}
+
+function resetButtonForRandomColor() {
+  const resetButton = document.querySelector("#reset-btn");
+  const singleBox = document.querySelectorAll(".actualBox");
+
+  singleBox.forEach((sBox) => {
+    resetButton.addEventListener("click", () => {
+      sBox.style.removeProperty("background-color"); // or sBox.style.backgroundColor = "";
     });
   });
 }
