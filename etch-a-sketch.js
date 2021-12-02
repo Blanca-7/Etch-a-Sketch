@@ -20,7 +20,6 @@ createDefaultBoxes();
 coloredBoxesButton();
 randomColorButton();
 resetButton();
-resetButtonForRandomColor();
 
 // creates custom set of tiles flex-direction: row
 function createUserBoxes(userValue) {
@@ -102,18 +101,13 @@ function resetButton() {
   const resetButton = document.querySelector("#reset-btn");
   const singleBox = document.querySelectorAll(".actualBox");
 
+  // resets the static color from CSS
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.classList.remove("colorTrail");
-      // sBox.style.backgroundColor = "lightpink";
     });
   });
-}
-
-function resetButtonForRandomColor() {
-  const resetButton = document.querySelector("#reset-btn");
-  const singleBox = document.querySelectorAll(".actualBox");
-
+  // resets the random RGB color from inline
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.style.removeProperty("background-color"); // or sBox.style.backgroundColor = "";
@@ -122,7 +116,6 @@ function resetButtonForRandomColor() {
 }
 
 // button for prompt
-
 const user = document.querySelector("#prompt-btn");
 
 user.addEventListener("click", userPrompt);
