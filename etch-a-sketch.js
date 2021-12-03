@@ -19,6 +19,7 @@ function createDefaultBoxes() {
 createDefaultBoxes();
 coloredBoxesButton();
 randomColorButton();
+darkenTenTimes();
 resetButton();
 
 // creates custom set of tiles flex-direction: row
@@ -111,6 +112,20 @@ function resetButton() {
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.style.removeProperty("background-color"); // or sBox.style.backgroundColor = "";
+    });
+  });
+}
+
+function darkenTenTimes() {
+  const darken = document.querySelectorAll(".actualBox");
+
+  darken.forEach((box) => {
+    box.addEventListener("mouseenter", () => {
+      let i = 100;
+      while (i > 0) {
+        box.style.filter = `brightness(${i}%)`;
+        i -= 10;
+      }
     });
   });
 }
