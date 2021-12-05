@@ -130,12 +130,10 @@ function darkenTenTimes() {
 
   darken.forEach((box) => {
     let i = 100;
-    if (i > 0) {
-      box.addEventListener("mouseenter", () => {
-        box.style.filter = `brightness(${i}%)`;
-        i -= 10;
-      });
-    }
+    box.addEventListener("mouseenter", () => {
+      box.style.filter = `brightness(${i}%)`;
+      i -= 10;
+    });
   });
 }
 
