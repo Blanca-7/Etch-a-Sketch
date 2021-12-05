@@ -19,7 +19,7 @@ function createDefaultBoxes() {
 createDefaultBoxes();
 coloredBoxesButton();
 randomColorButton();
-darkenTenTimes();
+
 resetButton();
 
 // creates custom set of tiles flex-direction: row
@@ -78,6 +78,7 @@ function coloredBoxes() {
 function coloredBoxesButton() {
   const singleColorButton = document.querySelector("#fixed-Color");
   singleColorButton.addEventListener("click", coloredBoxes);
+  darkenTenTimes();
 }
 
 function randomColor() {
@@ -95,6 +96,7 @@ function randomColor() {
 function randomColorButton() {
   const randomButton = document.querySelector("#random-RGB");
   randomButton.addEventListener("click", randomColor);
+  darkenTenTimes();
 }
 
 // button for reseting/clear
@@ -112,6 +114,13 @@ function resetButton() {
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.style.removeProperty("background-color"); // or sBox.style.backgroundColor = "";
+    });
+  });
+  // resets brightness back to 100%
+  singleBox.forEach((sBox) => {
+    resetButton.addEventListener("click", () => {
+      sBox.style.removeProperty("filter");
+      darkenTenTimes();
     });
   });
 }
@@ -145,6 +154,7 @@ function userPrompt() {
     coloredBoxesButton();
     randomColorButton();
     resetButton();
+    darkenTenTimes();
   } else {
     alert("Please Enter a number between 1 and 100");
   }
