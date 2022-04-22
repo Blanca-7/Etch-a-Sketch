@@ -47,23 +47,6 @@ function deleteBoxes() {
   });
 }
 
-// deletes set of boxes using for/of
-// function deleteBoxes() {
-//   const boxes = document.querySelectorAll(".new");
-//   for (let box of boxes) {
-//     box.remove();
-//   }
-// }
-
-// deletes set of boxes using for-loop
-// function deleteBoxes() {
-//   const boxes = document.querySelectorAll(".new");
-//   for (let i = 0; i < boxes.length; i++) {
-//     boxes[i].remove();
-//   }
-// }
-// upon mouseenter, changes each box to a static color
-
 function coloredBoxes() {
   const singleBox = document.querySelectorAll(".actualBox");
 
@@ -99,7 +82,7 @@ function randomColorButton() {
   darkenTenTimes();
 }
 
-// button for reseting/clear
+// button for resetting/clear
 function resetButton() {
   const resetButton = document.querySelector("#reset-btn");
   const singleBox = document.querySelectorAll(".actualBox");
