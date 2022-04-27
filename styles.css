@@ -17,16 +17,16 @@ body {
   flex-direction: column;
 }
 
-.new {
+.row {
   background-color: lightpink;
-  border: 1px rgb(224, 131, 224) solid;
   flex: 1 1 auto;
   display: flex;
 }
 .actualBox {
-  gap: 2em;
+  /* gap: 5em; */
   flex: 1 1 auto;
   border: 2px solid rgb(13, 1, 121);
+  margin: 1px;
 }
 
 .colorTrail {

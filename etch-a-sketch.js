@@ -6,7 +6,7 @@ function createDefaultBoxes() {
     const container = document.querySelector("#container");
 
     const cells = document.createElement("div");
-    cells.classList.add("new");
+    cells.classList.add("row");
     for (let j = 0; j < defaultBoxes; j++) {
       const box = document.createElement("div");
       box.classList.add("actualBox");
@@ -18,7 +18,7 @@ function createDefaultBoxes() {
 
 createDefaultBoxes();
 coloredBoxesButton();
-randomColorButton();
+// randomColorButton();
 
 resetButton();
 
@@ -28,7 +28,7 @@ function createUserBoxes(userValue) {
     const container = document.querySelector("#container");
 
     const cells = document.createElement("div");
-    cells.classList.add("new");
+    cells.classList.add("row");
 
     for (let j = 0; j < userValue; j++) {
       const box = document.createElement("div");
@@ -41,7 +41,7 @@ function createUserBoxes(userValue) {
 
 // deletes set of boxes using forEach
 function deleteBoxes() {
-  const boxes = document.querySelectorAll(".new");
+  const boxes = document.querySelectorAll(".row");
   boxes.forEach((box) => {
     box.remove();
   });
@@ -103,7 +103,7 @@ function resetButton() {
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.style.removeProperty("filter");
-      darkenTenTimes();
+      // darkenTenTimes();
     });
   });
 }
@@ -112,7 +112,7 @@ function darkenTenTimes() {
   const darken = document.querySelectorAll(".actualBox");
 
   darken.forEach((box) => {
-    let i = 100;
+    let i = 110;
     box.addEventListener("mouseenter", () => {
       box.style.filter = `brightness(${i}%)`;
       i -= 10;
@@ -127,7 +127,7 @@ user.addEventListener("click", userPrompt);
 
 function userPrompt() {
   let userValue = prompt(
-    "Please enter a number less than 100 to generate a new set of tiles"
+    "Please enter a number less than 100 to generate a row set of tiles"
   );
   if (userValue > 0 && userValue <= 100) {
     deleteBoxes();
