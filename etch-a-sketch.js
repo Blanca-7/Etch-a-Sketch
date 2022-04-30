@@ -17,8 +17,8 @@ function createDefaultBoxes() {
 }
 
 createDefaultBoxes();
-coloredBoxesButton();
-// randomColorButton();
+singleColor();
+randomColorButton();
 
 resetButton();
 
@@ -58,10 +58,14 @@ function coloredBoxes() {
   });
 }
 
-function coloredBoxesButton() {
+//coloredBoxes, darkenTenTimes
+
+function singleColor() {
   const singleColorButton = document.querySelector("#fixed-Color");
-  singleColorButton.addEventListener("click", coloredBoxes);
-  darkenTenTimes();
+  singleColorButton.addEventListener("click", () => {
+    coloredBoxes();
+    darkenTenTimes();
+  });
 }
 
 function randomColor() {
@@ -78,8 +82,10 @@ function randomColor() {
 
 function randomColorButton() {
   const randomButton = document.querySelector("#random-RGB");
-  randomButton.addEventListener("click", randomColor);
-  darkenTenTimes();
+  randomButton.addEventListener("click", () => {
+    randomColor();
+    darkenTenTimes();
+  });
 }
 
 // button for resetting/clear
@@ -132,10 +138,9 @@ function userPrompt() {
   if (userValue > 0 && userValue <= 100) {
     deleteBoxes();
     createUserBoxes(userValue);
-    coloredBoxesButton();
+    singleColor();
     randomColorButton();
     resetButton();
-    darkenTenTimes();
   } else {
     alert("Please Enter a number between 1 and 100");
   }
