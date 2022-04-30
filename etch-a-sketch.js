@@ -19,6 +19,7 @@ function createDefaultBoxes() {
 createDefaultBoxes();
 singleColor();
 randomColorButton();
+gradientButton();
 
 resetButton();
 
@@ -62,10 +63,7 @@ function coloredBoxes() {
 
 function singleColor() {
   const singleColorButton = document.querySelector("#fixed-Color");
-  singleColorButton.addEventListener("click", () => {
-    coloredBoxes();
-    darkenTenTimes();
-  });
+  singleColorButton.addEventListener("click", coloredBoxes);
 }
 
 function randomColor() {
@@ -111,6 +109,15 @@ function resetButton() {
       sBox.style.removeProperty("filter");
       // darkenTenTimes();
     });
+  });
+}
+
+function gradientButton() {
+  const gradientBtn = document.querySelector("#checkbox-1");
+  gradientBtn.addEventListener("click", () => {
+    if (gradientBtn.checked) {
+      darkenTenTimes();
+    }
   });
 }
 
