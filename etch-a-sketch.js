@@ -17,7 +17,7 @@ function createDefaultBoxes() {
 }
 
 createDefaultBoxes();
-singleColor();
+colorPicker();
 randomColorButton();
 gradientButton();
 
@@ -59,9 +59,18 @@ function coloredBoxes() {
   });
 }
 
-function singleColor() {
-  const singleColorButton = document.querySelector("#fixed-Color");
-  singleColorButton.addEventListener("click", coloredBoxes);
+function colorPicker() {
+  //const colorPickerButton = document.querySelector("#fixed-Color");
+  //colorPickerButton.addEventListener("click", coloredBoxes);
+
+  const colorPickerBtn = document.querySelector("#fixed-Color");
+  const colorPicker = document.querySelector("#colorPicker");
+
+  colorPickerBtn.addEventListener("click", () => {
+    colorPicker.focus();
+    colorPicker.value = "#FFCC00";
+    colorPicker.click();
+  });
 }
 
 function randomColor() {
@@ -142,7 +151,7 @@ function userPrompt() {
   if (userValue > 0 && userValue <= 100) {
     deleteBoxes();
     createUserBoxes(userValue);
-    singleColor();
+    colorPicker();
     randomColorButton();
     resetButton();
   } else {
