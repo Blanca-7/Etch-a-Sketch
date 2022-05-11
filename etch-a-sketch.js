@@ -53,23 +53,19 @@ function coloredBoxes() {
 
   singleBox.forEach((sBox) => {
     sBox.addEventListener("mouseenter", () => {
-      sBox.style.backgroundColor = ""; // removes RGB styling
-      sBox.classList.add("colorTrail");
+      sBox.style.backgroundColor = document.getElementById("colorPicker").value;
     });
   });
 }
 
 function colorPicker() {
-  //const colorPickerButton = document.querySelector("#fixed-Color");
-  //colorPickerButton.addEventListener("click", coloredBoxes);
-
   const colorPickerBtn = document.querySelector("#fixed-Color");
   const colorPicker = document.querySelector("#colorPicker");
 
   colorPickerBtn.addEventListener("click", () => {
     colorPicker.focus();
-    colorPicker.value = "#FFCC00";
     colorPicker.click();
+    coloredBoxes();
   });
 }
 
