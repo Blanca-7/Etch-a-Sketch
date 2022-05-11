@@ -23,7 +23,6 @@ body {
   display: flex;
 }
 .actualBox {
-  /* gap: 5em; */
   flex: 1 1 auto;
   border: 2px solid rgb(13, 1, 121);
   margin: 1px;

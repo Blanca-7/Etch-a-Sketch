@@ -53,13 +53,11 @@ function coloredBoxes() {
 
   singleBox.forEach((sBox) => {
     sBox.addEventListener("mouseenter", () => {
-      sBox.style.backgroundColor = ""; // removes RGB inline styling
+      sBox.style.backgroundColor = ""; // removes RGB styling
       sBox.classList.add("colorTrail");
     });
   });
 }
-
-//coloredBoxes, darkenTenTimes
 
 function singleColor() {
   const singleColorButton = document.querySelector("#fixed-Color");
@@ -82,11 +80,10 @@ function randomColorButton() {
   const randomButton = document.querySelector("#random-RGB");
   randomButton.addEventListener("click", () => {
     randomColor();
-    darkenTenTimes();
   });
 }
 
-// button for resetting/clear
+// button for resetting/clearing
 function resetButton() {
   const resetButton = document.querySelector("#reset-btn");
   const singleBox = document.querySelectorAll(".actualBox");
@@ -97,43 +94,43 @@ function resetButton() {
       sBox.classList.remove("colorTrail");
     });
   });
+
   // resets the random RGB color from inline
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.style.removeProperty("background-color"); // or sBox.style.backgroundColor = "";
     });
   });
+
   // resets brightness back to 100%
   singleBox.forEach((sBox) => {
     resetButton.addEventListener("click", () => {
       sBox.style.removeProperty("filter");
-      // darkenTenTimes();
     });
   });
 }
 
 function gradientButton() {
   const gradientBtn = document.querySelector("#checkbox-1");
-  gradientBtn.addEventListener("click", () => {
-    if (gradientBtn.checked) {
-      darkenTenTimes();
-    }
-  });
+  gradientBtn.addEventListener("click", darkenTenTimes);
 }
 
+// Hovering 10x over each tile makes it completely black, if the checkbox is checked
 function darkenTenTimes() {
   const darken = document.querySelectorAll(".actualBox");
 
   darken.forEach((box) => {
     let i = 110;
     box.addEventListener("mouseenter", () => {
-      box.style.filter = `brightness(${i}%)`;
-      i -= 10;
+      if (this.checked) {
+        box.style.filter = `brightness(${i}%)`;
+        i -= 10;
+      }
     });
   });
 }
 
-// button for prompt
+// button for prompt to set new set of tiles
 const user = document.querySelector("#prompt-btn");
 
 user.addEventListener("click", userPrompt);
